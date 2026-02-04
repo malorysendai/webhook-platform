@@ -231,13 +231,22 @@ Build a customer-facing webhook delivery platform from scratch. The service will
 
 ---
 
+## Decisions (Resolved 2026-02-04)
+
+| Question | Decision |
+|----------|----------|
+| **Authentication** | Delegated externally — skip auth build, dashboard uses external auth |
+| **Domain** | `hooks.sendai.co.zw` |
+| **Pricing** | Flat rate: $0.10 per successful delivery |
+| **Regions** | Single region (US-East) — multi-region deferred to Phase 3 |
+| **Signature Format** | Stripe-style HMAC-SHA256 |
+| **Queue System** | Redis (Streams or Lists with consumer groups) |
+| **Real-time Logs** | WebSocket for live delivery updates |
+
+---
 ## Open Questions
 
-1. **Authentication**: Use existing company auth or build new customer auth system? **Answer** We will delegate auth so for now skip it
-2. **Domain**: What domain will host this? (hooks.scapelabs.com? webhook.scapelabs.com?) **Answer** hooks.sendai.co.zw
-3. **Pricing Tiers**: What are the free/pro/enterprise limits? **Answer** Flat rate per delivery $0.10
-4. **Regions**: Single region (US-East) or multi-region from day 1? **Answer** Single , we want to slowly progress
-5. **Signature Version**: Standard (Stripe-style) or custom format? **Answer** Stripe style
+_None remaining — all decisions finalized._
 
 ---
 
