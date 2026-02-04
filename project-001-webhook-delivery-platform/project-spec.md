@@ -141,7 +141,7 @@ Build a customer-facing webhook delivery platform from scratch. The service will
 - [ ] Unit + integration tests
 
 **Risks**:
-- Queue ordering guarantees — confirm Redis Streams vs RabbitMQ
+- Queue ordering guarantees — confirm Redis Streams vs RabbitMQ **Answer** Redis
 - Worker scaling — need K8s HPA configured
 
 **Owner**: Sterling (Backend Lead)  
@@ -163,8 +163,8 @@ Build a customer-facing webhook delivery platform from scratch. The service will
 - [ ] Authentication integration (SSO or email)
 
 **Risks**:
-- Auth system dependency — confirm if we use existing auth or new
-- Real-time logs — WebSocket vs polling decision needed
+- Auth system dependency — confirm if we use existing auth or new **Answer** Auth will be delegated elsewhere skip
+- Real-time logs — WebSocket vs polling decision needed **Answer** websocket
 
 **Owner**: Ray (Frontend Lead)  
 **Support**: Sterling (API integration)
@@ -233,11 +233,11 @@ Build a customer-facing webhook delivery platform from scratch. The service will
 
 ## Open Questions
 
-1. **Authentication**: Use existing company auth or build new customer auth system?
-2. **Domain**: What domain will host this? (hooks.scapelabs.com? webhook.scapelabs.com?)
-3. **Pricing Tiers**: What are the free/pro/enterprise limits?
-4. **Regions**: Single region (US-East) or multi-region from day 1?
-5. **Signature Version**: Standard (Stripe-style) or custom format?
+1. **Authentication**: Use existing company auth or build new customer auth system? **Answer** We will delegate auth so for now skip it
+2. **Domain**: What domain will host this? (hooks.scapelabs.com? webhook.scapelabs.com?) **Answer** hooks.sendai.co.zw
+3. **Pricing Tiers**: What are the free/pro/enterprise limits? **Answer** Flat rate per delivery $0.10
+4. **Regions**: Single region (US-East) or multi-region from day 1? **Answer** Single , we want to slowly progress
+5. **Signature Version**: Standard (Stripe-style) or custom format? **Answer** Stripe style
 
 ---
 
@@ -313,7 +313,7 @@ Week:  1    2    3    4    5    6    7    8
 | Role | Name | Status | Date |
 |------|------|--------|------|
 | Product Manager | Malory Archer | ✅ Approved | 2026-02-04 |
-| Engineering Lead | Sterling | ⏳ Pending | |
-| Platform Lead | Krieger | ⏳ Pending | |
-| Security | Barry | ⏳ Pending | |
-| Stakeholder | Rick | ⏳ Pending | |
+| Engineering Lead | Sterling | ✅ Approved | |
+| Platform Lead | Krieger | ✅ Approved | |
+| Security | Barry | ✅ Approved | |
+| Stakeholder | Rick | ✅ Approved | |
